@@ -3,7 +3,7 @@
 1. Parašykite funkciją 'dividesBy5', kuri priimtų int tipo skaičių ir grąžintų jo dalybos iš 5 liekaną.
 */
 
-function dividesBy5(int $number) {
+function dividesBy5(int $number) : int {
     return $number/5;
 }
 
@@ -29,3 +29,18 @@ function arrayPrinter(array $mass) {
 }
 
 arrayPrinter(['some text', 'another text']);
+
+/*
+3. Parašykite funkciją 'stringEnhancer', kuri grąžintų pakeistą tekstą.
+Funkcijos kvietimas: stringEnhancer('some text', '##')
+Funkcija grąžina: '##some text##'
+Funkcijos kvietimas: stringEnhancer('some text')
+Funkcija grąžina: '**some text**'
+*/
+
+function stringEnhancer(string $text1, string $text2 = "**" ) : string {
+    return $text2 . $text1 . $text2;
+}
+
+echo stringEnhancer('some text', '##') .PHP_EOL;
+echo stringEnhancer('some text') .PHP_EOL;
