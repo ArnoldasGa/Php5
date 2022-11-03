@@ -87,3 +87,30 @@ function textReplicator(string $text, $number) : string {
 
 echo textReplicator('some_text', 3) .PHP_EOL;
 echo textReplicator('some_text', null) .PHP_EOL;
+echo "Task 5 Done" .PHP_EOL;
+
+
+/*
+6. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
+*/
+
+$textRep = function (string $text, $number) {
+    if ($number != null){
+        for ($i = 1 ; $i < $number ; $i++){
+            $text = $text . '-' . $text;
+        }
+    }
+    return $text;
+};
+
+$textRep2 = function (string $text, $number) {
+    if ($number != null){
+        for ($i = 1 ; $i < $number ; $i++){
+            $text = $text . '-' . $text;
+        }
+    }
+    return $text;
+};
+
+echo $textRep('some_text', 3) .PHP_EOL;
+echo $textRep2('some_text', null) .PHP_EOL;
