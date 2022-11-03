@@ -44,3 +44,24 @@ function stringEnhancer(string $text1, string $text2 = "**" ) : string {
 
 echo stringEnhancer('some text', '##') .PHP_EOL;
 echo stringEnhancer('some text') .PHP_EOL;
+
+/*
+4. Parašykite funkciją 'stringModifier', kuri pamodifikuotų paduotą string tipo kintamąjį.
+Funkcijos kvietimas:
+$x = 'some text';
+stringModifier($x, '##');
+echo $x; // '##some text##'
+Funkcija grąžina: funkcija nieko negrąžina
+*/
+
+$x = 'some text';
+
+function stringModifier(string &$modify, string $text) {
+    $modify = $text . $modify . $text;
+}
+
+echo $x .PHP_EOL;
+
+stringModifier($x, '##');
+
+echo $x;
