@@ -114,3 +114,13 @@ $textRep2 = function (string $text, $number) {
 
 echo $textRep('some_text', 3) .PHP_EOL;
 echo $textRep2('some_text', null) .PHP_EOL;
+
+/*
+7. Paverskite funkciją 'stringEnhancer', į lambda(arrow) funkciją.
+*/
+
+$input = 'some text';
+
+$arrow = fn(string $text2 = "**") => $text2 . $input . $text2;
+
+echo $arrow('##');
