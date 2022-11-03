@@ -64,4 +64,26 @@ echo $x .PHP_EOL;
 
 stringModifier($x, '##');
 
-echo $x;
+echo $x .PHP_EOL;
+
+/*
+5. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
+Funkcijos kvietimas:
+textReplicator('some_text', 3);
+Funkcija grąžina: 'some_text-some_text-some_text'
+Funkcijos kvietimas:
+textReplicator('some_text', null);
+Funkcija grąžina: 'some_text'
+*/
+
+function textReplicator(string $text, $number) : string {
+    if ($number != null){
+        for ($i = 1 ; $i < $number ; $i++){
+            $text = $text . '-' . $text;
+        }
+    }
+    return $text;
+}
+
+echo textReplicator('some_text', 3) .PHP_EOL;
+echo textReplicator('some_text', null) .PHP_EOL;
